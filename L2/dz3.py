@@ -1,0 +1,6 @@
+x = int(input('Введіть 5-ти значне число:'))
+left, right = divmod(x, 10000)
+left1, right1 = divmod(right, 1000)
+left2, right2 = divmod(right1, 100)
+left3, right3 = divmod(right2,10)
+print(right3 * 10000 + left3 * 1000 + left2 * 100 + left1 * 10 + left * 1)
