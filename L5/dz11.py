@@ -1,10 +1,8 @@
-yes = "Y"
-no = "no"
-answer = input("Починаємо?")
-while answer == yes:
-    x = int(input('Введіть 1 число: '))
-    math_operation = input('Введіть операції: ')
-    y = int(input('Введіть 2 число: '))
+while True:
+    x = int(input('Введіть перше число: '))
+    math_operation = input('Введіть операцію: ')
+    y = int(input('Введіть друге число: '))
+
     if math_operation == '+':
         result = x + y
         print("Результат:", result)
@@ -20,6 +18,7 @@ while answer == yes:
         else:
             result = x / y
             print("Результат:", result)
-    answer = input("Продовжити?")
-else:
-    print('End')
+
+    proceed = input("Бажаєте продовжити (yes/no)? ")
+    if proceed != 'yes':
+        break
