@@ -67,17 +67,14 @@ st10 = Student('Female', 25, 'Liza', 'Taylor', 'AN145')
 st11 = Student('Male', 30, 'Steve', 'Jobs', 'AN142')
 
 gr = Group('PD1')
-gr.add_student(st1)
-gr.add_student(st2)
-gr.add_student(st3)
-gr.add_student(st4)
-gr.add_student(st5)
-gr.add_student(st6)
-gr.add_student(st7)
-gr.add_student(st8)
-gr.add_student(st9)
-gr.add_student(st10)
-gr.add_student(st11)
+sts = [st1, st2, st3, st4, st5, st6, st7, st8, st9, st10, st11]
+
+for i in sts:
+    try:
+        gr.add_student(i)
+    except UserException as e:
+        print(e.message)
+
 print(gr)
 assert str(gr.find_student('Jobs')) == str(st1), 'Test1'
 assert gr.find_student('Jobs2') is None, 'Test2'
