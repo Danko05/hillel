@@ -26,10 +26,10 @@ class Fraction:
         return self.a / self.b == other.a / other.b
 
     def __gt__(self, other):
-        return self.a > other.a
+        return self.a / self.b > other.a / other.b
 
     def __lt__(self, other):
-        return self.a < other.a
+        return self.a / self.b < other.a / other.b
 
     def __str__(self):
         return f'Fraction: {self.a}, {self.b}'
@@ -53,4 +53,8 @@ assert f_a != f_b  # True
 f_1 = Fraction(2, 4)
 f_2 = Fraction(3, 6)
 assert f_1 == f_2  # True
+
+assert f_a > f_b  # True
+assert f_b > f_e  # True
+
 print('OK')
